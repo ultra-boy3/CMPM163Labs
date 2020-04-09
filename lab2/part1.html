@@ -36,10 +36,11 @@
             
             //Set positions
             cube2.position.x = 0;
-            cube2.position.y = 1.5;
+            cube2.position.z = -2;
 
-            cube3.position.y = -1.5;
-            camera.position.z = 5; //this moves the camera towards the viewer
+            cube3.position.y = 0;
+            cube3.position.z = 2;
+            camera.position.z = 7; //this moves the camera towards the viewer
 
             //Call renderer to animate the cube(s)
             function animate() {
@@ -49,13 +50,15 @@
                 //1st cube
                 geometry.rotateX(0.01);
                 geometry.rotateY(0.01);
-                geometry.scale(1, 1, 1);
+                //geometry.scale(1.05, 1.05, 1);
 
                 //2nd cube
                 geometry2.rotateY(-0.03);
-                geometry2.translate(0.05, 0, 0);
+                geometry2.translate(0.08, 0, 0);
 
                 //3rd cube
+                geometry3.rotateX(-0.03);
+                geometry3.translate(0, 0.08, 0);
             }
             animate();
         </script>
