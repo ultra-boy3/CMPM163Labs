@@ -23,9 +23,11 @@
 			camera.rotation.x = -0.3;
 
 			//Light source
-			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			var light = new THREE.PointLight(0xffffff, 1, 10000);
+			var light2 = new THREE.PointLight(0x00c0ff, 1, 20000);
 			light.position.set(50, 50, 50);
-			scene.add(light);
+			light2.position.set(-50, 50, 50);
+			scene.add(light, light2);
 
 			//Load 3D model
 			var loader = new THREE.GLTFLoader();
