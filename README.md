@@ -1,4 +1,4 @@
 # CMPM163Labs
-
-Lab 2 Readme:
-https://drive.google.com/file/d/1_DB0JUPH8TkMiO0voPH5Cuohx5Hr33dy/view?usp=sharing
+LAB 2
+Part 1 Video: https://drive.google.com/file/d/1_DB0JUPH8TkMiO0voPH5Cuohx5Hr33dy/view?usp=sharing
+![]Images/lab2part2.png
