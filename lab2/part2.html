@@ -19,6 +19,8 @@
       		renderer.setSize(window.innerWidth, window.innerHeight);
       		document.body.appendChild(renderer.domElement);
       		camera.position.z = 200;
+			camera.position.y = 100;
+			camera.rotation.x = -0.3;
 
 			//Light source
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
@@ -27,18 +29,42 @@
 
 			//Load 3D model
 			var loader = new THREE.GLTFLoader();
-			loader.load('books.glb', function (gltf){
+			loader.load('calla_lily_with_roses.glb', function (gltf){
 				scene.add(gltf.scene);
 
-				gltf.scene.position.x = 0;
-				gltf.scene.position.x = 0;
-				gltf.scene.position.z = 0;
-				gltf.scene.rotation.x = 0;
-				gltf.scene.rotation.y = 0;
-				gltf.scene.rotation.z = 0;
-				gltf.scene.scale.x = 2;
-				gltf.scene.scale.y = 2;
-				gltf.scene.scale.z = 2;
+				gltf.scene.position.x = 20;
+				gltf.scene.position.y = -50;
+				gltf.scene.position.z = -5;
+			}, function (xhr) {
+				console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+			}, function (error) {
+				console.error(error);
+			});
+
+			loader.load('chair.glb', function (gltf){
+				scene.add(gltf.scene);
+
+				gltf.scene.position.x = -50;
+				gltf.scene.scale.x = 40;
+				gltf.scene.scale.y = 40;
+				gltf.scene.scale.z = 40;
+				gltf.scene.rotation.y = 0.5;
+			}, function (xhr) {
+				console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+			}, function (error) {
+				console.error(error);
+			});
+
+			loader.load('cat.glb', function (gltf){
+				scene.add(gltf.scene);
+
+				gltf.scene.scale.x = 1.2;
+				gltf.scene.scale.y = 1.2;
+				gltf.scene.scale.z = 1.2;
+				gltf.scene.position.x = -30;
+				gltf.scene.rotation.y = 0.6;
+				gltf.scene.position.y = 35;
+				gltf.scene.position.z = 35;
 			}, function (xhr) {
 				console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 			}, function (error) {
@@ -48,8 +74,6 @@
 			function animate() {
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
-
-				
 			}
 			animate();
 		</script>
