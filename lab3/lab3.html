@@ -26,11 +26,14 @@
             var material = new THREE.MeshPhongMaterial({color: 0xdddddd, specular: 0x00ff00,
                 shininess: 30});
             var material2 = new THREE.MeshNormalMaterial();
+            var material3 = new THREE.MeshBasicMaterial( { color: 0xffaa00, transparent: true, wireframe: true } );
             var cube = new THREE.Mesh(geometry, material);
-            var cube2 = new THREE.Mesh(geometry, material2)
+            var cube2 = new THREE.Mesh(geometry, material2);
+            var cube3 = new THREE.Mesh(geometry, material3);
 
             cube2.position.set(2, 2, 0);
-            scene.add(cube, cube2);
+            cube3.position.set(-2, -2, 0);
+            scene.add(cube, cube2, cube3);
 
             
 
