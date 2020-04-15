@@ -22,7 +22,9 @@
 
             // Setup the cube
             var geometry = new THREE.BoxGeometry();
-            var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+            //Using Phong material
+            var material = new THREE.MeshPhongMaterial({color: 0xdddddd, specular: 0x00ff00,
+                shininess: 30});
             var cube = new THREE.Mesh( geometry, material);
             scene.add(cube);
 
