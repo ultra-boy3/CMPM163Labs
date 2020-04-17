@@ -20,6 +20,30 @@
             document.body.appendChild(renderer.domElement);
             camera.position.z = 5;
 
+            //Load shaders
+            THREE.Cache.enabled = true;
+            var count = 0;
+            var loader = new THREE.FileLoader();
+            var fshader, vshader;
+            
+            loader.load('shaders/vertexShader.vert',
+                // onLoad callback
+                function(data){
+                    console.log(data); //Outpt the text to the console
+                    vshader = data;
+                    count += 1;
+                    //addCoolCube();
+                },
+                // onProgress callback
+                function (xhr) {
+                    console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+                },
+                // onError callback
+                function(err) {
+                    console.error('An error happened');
+                }
+            );
+
             // Setup the cube
             var geometry = new THREE.BoxGeometry();
             //Using Phong material
