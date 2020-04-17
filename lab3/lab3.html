@@ -62,6 +62,22 @@
                 }
             );
 
+            var geometry1, material1, mesh1;
+
+            function addCoolCube() {
+                if(count == 2){
+                    geometry1 = new THREE.BoxGeometry(1, 1, 1);
+                    material1 = new THREE.ShaderMaterial({
+                        fragmentShader: fshader,
+                        vertexShader: vshader,
+                        precision: 'mediump'
+                    });
+                    mesh1 = new THREE.Mesh(geometry1, material1);
+                    mesh1.position.x = 2;
+                    scene.add(mesh1);
+                }
+            }
+
             // Setup the cube
             var geometry = new THREE.BoxGeometry();
             //Using Phong material
@@ -77,8 +93,6 @@
             cube3.position.set(-2, -2, 0);
             scene.add(cube, cube2, cube3);
 
-            
-
             // Add the light
             var light = new THREE.PointLight(0xffffff, 1, 1000);
             light.position.set(10, 10, 10);
@@ -88,6 +102,14 @@
                 requestAnimationFrame(animate);
                 geometry.rotateX(0.01);
                 geometry.rotateY(0.01);
+                renderer.render(scene, camera);
+
+                //Spin cubes added by addCoolCube
+                if(geometry1){
+                    geometry1.rotateX(0.01);
+                    geometry1.rotateY(0.01);
+                }
+
                 renderer.render(scene, camera);
             }
             animate();
