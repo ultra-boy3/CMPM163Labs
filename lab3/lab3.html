@@ -44,6 +44,24 @@
                 }
             );
 
+            loader.load('shader/fragShader.frag',
+                //onLoad callback
+                function(data){
+                    console.log(data);
+                    fshader = data;
+                    count += 1;
+                    //addCoolCube();
+                },
+                //onProgress callback
+                function(xhr){
+                    console.log((xhr.loaded/xhr.total * 100)+ '% loaded')
+                },
+                //onError callback
+                function(err){
+                    console.log('An error happened');
+                }
+            );
+
             // Setup the cube
             var geometry = new THREE.BoxGeometry();
             //Using Phong material
