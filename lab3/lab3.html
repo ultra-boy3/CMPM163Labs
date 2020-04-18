@@ -24,7 +24,7 @@
             THREE.Cache.enabled = true;
             var count = 0;
             var loader = new THREE.FileLoader();
-            var fshader, vshader;
+            var fshader, vshader, rshader;
             
             loader.load('shaders/vertexShader.vert',
                 // onLoad callback
@@ -45,7 +45,7 @@
                 }
             );
 
-            loader.load('shaders/rainbowShader.frag',
+            loader.load('shaders/fragmentShader.frag',
                 //onLoad callback
                 function(data){
                     console.log(data);
@@ -64,7 +64,26 @@
                 }
             );
 
-            var geometry1, material1, mesh1;
+            loader.load('shaders/rainbowShader.frag',
+                //onLoad callback
+                function(data){
+                    console.log(data);
+                    rshader = data;
+                    count += 1;
+                    addCoolCube();
+                    //addCoolCube();
+                },
+                //onProgress callback
+                function(xhr){
+                    console.log((xhr.loaded/xhr.total * 100)+ '% loaded')
+                },
+                //onError callback
+                function(err){
+                    console.log('An error happened');
+                }
+            );
+
+            var geometry1, material1, mesh1, geometry2;
 
             function addCoolCube() {
                 if(count == 2){
@@ -84,6 +103,18 @@
                     });
                     mesh1 = new THREE.Mesh(geometry1, material1);
                     mesh1.position.x = 2;
+                    scene.add(mesh1);
+                }
+
+                if(count == 3){
+                    geometry2 = new THREE.BoxGeometry(1, 1, 1);
+                    material1 = new THREE.ShaderMaterial({
+                        fragmentShader: rshader,
+                        vertexShader: vshader,
+                        precision: 'mediump'
+                    });
+                    mesh1 = new THREE.Mesh(geometry1, material1);
+                    mesh1.position.x = -2;
                     scene.add(mesh1);
                 }
             }
@@ -118,6 +149,11 @@
                 if(geometry1){
                     geometry1.rotateX(0.01);
                     geometry1.rotateY(0.01);
+                }
+
+                if(geometry2){
+                    geometry2.rotateX(0.01);
+                    geometry2.rotateY(0.01);
                 }
 
                 renderer.render(scene, camera);
