@@ -25,13 +25,15 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
             // setup textures
             var texture = THREE.ImageUtils.loadTexture("172.jpg");
             var texture2 = THREE.ImageUtils.loadTexture("199.jpg");
+			var normMap = THREE.ImageUtils.loadTexture("172_norm.jpg");
 
 			// setup the cube
 var geometry = new THREE.BoxGeometry();
-      			var material = new THREE.MeshPhongMaterial( { map: texture } );
+      			var material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap } );
       			var cube = new THREE.Mesh(geometry, material);
      			scene.add(cube);
-
+				
+				material = new THREE.MeshPhongMaterial( { map: texture } );
 				var cube2 = new THREE.Mesh(geometry, material);
 				scene.add(cube2);
 				cube2.position.x -= 2;
