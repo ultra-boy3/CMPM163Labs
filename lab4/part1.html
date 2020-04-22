@@ -11,6 +11,8 @@
 	<body>
 		<script src="../three.js-master/build/three.js"></script>
 		<script>
+			//var xAxis = new THREE.vector3(1, 0, 0);
+
 			// setup the scene
       			var scene = new THREE.Scene();
       			var camera = new THREE.PerspectiveCamera(75, 
@@ -31,13 +33,16 @@ var geometry = new THREE.BoxGeometry();
      			scene.add(cube);
 
 			// add the light
-			var light = new THREE.PointLight(0xffffff, 1, 10000);
+			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
 			scene.add(light);
 
 			function animate() {
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
+
+				light.rotateY(-0.03);
+                light.translateX(-0.08);
 			}
 			animate();
 
