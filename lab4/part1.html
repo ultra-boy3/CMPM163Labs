@@ -32,17 +32,22 @@ var geometry = new THREE.BoxGeometry();
       			var cube = new THREE.Mesh(geometry, material);
      			scene.add(cube);
 
+				var cube2 = new THREE.Mesh(geometry, material);
+				scene.add(cube2);
+				cube2.position.x -= 2;
+
+
 			// add the light
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
-			light.position.set(10, 10, 10);
+			light.position.set(0, 10, 0);
 			scene.add(light);
 
 			function animate() {
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
 
-				light.rotateY(-0.03);
-                light.translateX(-0.08);
+				light.rotateX(0.03);
+                light.translateY(0.08);
 			}
 			animate();
 
