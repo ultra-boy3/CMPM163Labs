@@ -26,17 +26,40 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
             var texture = THREE.ImageUtils.loadTexture("172.jpg");
             var texture2 = THREE.ImageUtils.loadTexture("199.jpg");
 			var normMap = THREE.ImageUtils.loadTexture("172_norm.jpg");
+			var normMap2 = THREE.ImageUtils.loadTexture("199_norm.jpg");
 
 			// setup the cube
 var geometry = new THREE.BoxGeometry();
       			var material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap } );
       			var cube = new THREE.Mesh(geometry, material);
      			scene.add(cube);
+				cube.position.y -= 1;
+				cube.position.x += 0;
 				
 				material = new THREE.MeshPhongMaterial( { map: texture } );
 				var cube2 = new THREE.Mesh(geometry, material);
 				scene.add(cube2);
+				cube2.position.y -= 1;
 				cube2.position.x -= 2;
+
+				material = new THREE.MeshPhongMaterial( { map: texture2, normalMap: normMap2 } );
+				var cube3 = new THREE.Mesh(geometry, material);
+				scene.add(cube3);
+				cube3.position.y += 1;
+				cube3.position.x += 0;
+
+				material = new THREE.MeshPhongMaterial( { map: texture2 } );
+				var cube4 = new THREE.Mesh(geometry, material);
+				scene.add(cube4);
+				cube4.position.y += 1;
+				cube4.position.x -= 2;
+
+				//Mismatched cube
+				material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap2 } );
+				var cube5 = new THREE.Mesh(geometry, material);
+				scene.add(cube5);
+				cube5.position.y -= 0;
+				cube5.position.x += 2;
 
 
 			// add the light
