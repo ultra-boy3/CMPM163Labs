@@ -13,3 +13,10 @@ How each cube was made (Top-left to bottom-right):
 - Built using the part 1 instructions. Uses Phong material and specularity.
 - Built using the part 2 instructions. Uses vertexShader.vert and fragmentShader.frag, assigning the two uniform vec3 colors to pink and purple.
 - Normal material with no assigned values. Also inspired by an example sphere: https://threejs.org/examples/#webgl_materials
+
+LAB 4
+a. u * 8 - 1 = x or u * 8 = x?
+b. |v * 8 - 8| = y or |v * 8 - 8| + 1 = y?
+c. 0.375 * 8 = 3 - 1 = 2
+   0.25 * 8 = 2 - 8 = 6
+   (3, 5) or (2, 6) = blue, grey
