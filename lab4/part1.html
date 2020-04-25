@@ -64,6 +64,42 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
       			console.error('An error happened');
       		});
 
+
+
+			loader.load('shaders/tile.vert',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			vshader = data;
+      			count += 1;
+      			addTiledCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+     		// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
+			loader.load('shaders/tile.frag',
+      		// onLoad callback
+      		function (data) {
+      			console.log(data); // output the text to the console
+      			fshader = data;
+      			count += 1;
+      			addTiledCube(); // we will write this method
+      		},
+      		// onProgress callback
+      		function (xhr) {
+      			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      		},
+			// onError callback
+      		function (err) {
+      			console.error('An error happened');
+      		});
+
 			function addTextureShaderCube() {
 				if(count == 2) {
 					var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("154.jpg")}};
@@ -79,7 +115,26 @@ window.innerWidth/window.innerHeight, 0.1, 1000);
 
 					mesh1 = new THREE.Mesh(geometry1, material1);
 					mesh1.position.x = 2;
-					mesh1.position.y = 1;
+					mesh1.position.y = 0;
+					scene.add(mesh1);
+				}
+			}
+
+			function addTiledCube() {
+				if(count == 4) {
+					var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("159.jpg")}};
+
+					geometry1 = new THREE.BoxGeometry(1, 1, 1);
+					material1 = new THREE.ShaderMaterial({
+						uniforms: uniforms,
+						fragmentShader: fshader,
+						vertexShader: vshader,
+						precision: "mediump"
+					});
+
+					mesh1 = new THREE.Mesh(geometry1, material1);
+					mesh1.position.x = 0;
+					mesh1.position.y = 2;
 					scene.add(mesh1);
 				}
 			}
@@ -95,32 +150,32 @@ var geometry = new THREE.BoxGeometry();
       			var material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap } );
       			var cube = new THREE.Mesh(geometry, material);
      			scene.add(cube);
-				cube.position.y -= 1;
+				cube.position.y -= 2;
 				cube.position.x += 0;
 				
 				material = new THREE.MeshPhongMaterial( { map: texture } );
 				var cube2 = new THREE.Mesh(geometry, material);
 				scene.add(cube2);
-				cube2.position.y -= 1;
+				cube2.position.y -= 2;
 				cube2.position.x -= 2;
 
 				material = new THREE.MeshPhongMaterial( { map: texture2, normalMap: normMap2 } );
 				var cube3 = new THREE.Mesh(geometry, material);
 				scene.add(cube3);
-				cube3.position.y += 1;
+				cube3.position.y += 0;
 				cube3.position.x += 0;
 
 				material = new THREE.MeshPhongMaterial( { map: texture2 } );
 				var cube4 = new THREE.Mesh(geometry, material);
 				scene.add(cube4);
-				cube4.position.y += 1;
+				cube4.position.y += 0;
 				cube4.position.x -= 2;
 
 				//Mismatched cube
 				material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap2 } );
 				var cube5 = new THREE.Mesh(geometry, material);
 				scene.add(cube5);
-				cube5.position.y -= 1;
+				cube5.position.y -= 2;
 				cube5.position.x += 2;
 
 
