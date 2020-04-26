@@ -19,7 +19,9 @@ Video: https://drive.google.com/file/d/1ioyDnqnDTO2mrcfU4Y1clFABVQVgpIYX/view?us
 
 Questions
 a. u * 8 = x or u * 8 - 1 = x?
+
 b. |v * 8 - 8| = y or |v * 8 - 8| + 1 = y?
+
 c. 0.375 * 8 = 3 - 1 = 2
    0.25 * 8 = 2 - 8 = 6
    (3, 5) or (2, 6) = blue, grey
