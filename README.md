@@ -15,8 +15,21 @@ How each cube was made (Top-left to bottom-right):
 - Normal material with no assigned values. Also inspired by an example sphere: https://threejs.org/examples/#webgl_materials
 
 LAB 4
-a. u * 8 - 1 = x or u * 8 = x?
+Video: https://drive.google.com/file/d/1ioyDnqnDTO2mrcfU4Y1clFABVQVgpIYX/view?usp=sharing
+
+Questions
+a. u * 8 = x or u * 8 - 1 = x?
 b. |v * 8 - 8| = y or |v * 8 - 8| + 1 = y?
 c. 0.375 * 8 = 3 - 1 = 2
    0.25 * 8 = 2 - 8 = 6
    (3, 5) or (2, 6) = blue, grey
+Depnds on if we are starting on 0 or 0.125
+
+How each cube was made:
+1. (Bottom-left) Created using THREE's texture loader and built-in Phong material. The light orbiting around the cubes was achieved by placing it above them, then translating it along the Z-axis and rotating it around the Y-axis.
+2. (Bottom-middle) Same as #1, but with the corresponding normal map added on.
+3. (Middle-left) Same as #1, using a different texture.
+4. (Middle-middle) Same texture as #3, but with corresponding normalmap
+5. (Bottom-right) Same as others, but with a mis-mateched texture and normal map.
+6. (Middle-right) Created by loading vertex and frag shaders from lab3. First, the uniform was set to oscollate between two colors before being replaced by loading a texture. The color of each fragment is determined by using the uv coordinates and finding the corresponding color on the texture.
+7. (Top) Created using an adjusted frag shader called tile.frag. 
