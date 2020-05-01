@@ -39,6 +39,7 @@ Changes made to unity scene:
 2. Changed position and rotation of sun light source.
 3. Changed emission color of sun light source.
 4. Changed skybox emission color.
+5. Changed emission texture of sun object
+6. Created a particle system to represent fireflies: Sphere that emits in random directions
 Changes that CAN be made:
-1. Changing sun emission texture will change its appearance
-2. Replace models used by the prefabs?
+1. Replace models used by the prefabs?
