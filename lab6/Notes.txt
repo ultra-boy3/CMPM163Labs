@@ -20,3 +20,12 @@ on one side of a rectangular plane.
 Other Lights:
 - Ambient light
 - Emissive materials (baked lighting only)
+
+Video 3 & 4:
+- Two standard shaders
+	- Metallic
+		- Metalness can be defined by slider or texture. Texture can give
+		  varying metalness
+	- Specular
+- Rendering modes:
+	- Transparent, based on color alpha. Retains reflection.

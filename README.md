@@ -43,3 +43,10 @@ In addition to doing the particle system tutorial, I made various changes to tra
 4. Added a moon sprite to the sun object's Albedo map. (Albedo basically means a texture without shadows or highlights)
 5. Created a particle system to represent fireflies and placed it around the map. The system emits particles in a sphere shape and they have a random start speed between -3 and 3. The random speed, in addition to a random velocity over time, causes the particles to appear in various locations within the circle and drift in a mostly random direction.
 6. Additionally, the alpha of the firefly particles changes over time so that they appear to blink in and out of vision.
+
+Lab 6
+Lights:
+1. Point Light: A light in space that shines in all directions. Rotation is irrelevant.
+2. Directional light: Shines on all objects in the scene based on its rotation, similar to the sun. Position is irrelevant.
+3. Spot Light: Shines light on objects within a cone, of which the radius and other properties can be adjusted. Affected by rotation and position.
+4. Area Light: Shines light on all objects on one side of a rectangular plane. Only works with baked lighting.
