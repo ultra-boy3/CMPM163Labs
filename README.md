@@ -1,10 +1,12 @@
 # CMPM163Labs
 LAB 2
+
 Part 1 Video: https://drive.google.com/file/d/1_DB0JUPH8TkMiO0voPH5Cuohx5Hr33dy/view?usp=sharing
 
 ![](Images/lab2part2.png)
 
 LAB 3
+
 Video: https://drive.google.com/file/d/1Ijrx45119McJHbOBVCSIvfvnGQzZzDel/view?usp=sharing
 
 How each cube was made (Top-left to bottom-right):
@@ -15,6 +17,7 @@ How each cube was made (Top-left to bottom-right):
 - Normal material with no assigned values. Also inspired by an example sphere: https://threejs.org/examples/#webgl_materials
 
 LAB 4
+
 Video: https://drive.google.com/file/d/1ioyDnqnDTO2mrcfU4Y1clFABVQVgpIYX/view?usp=sharing
 
 Questions
@@ -33,7 +36,8 @@ How each cube was made:
 6. (Middle-right) Created by loading vertex and frag shaders from lab3. First, the uniform was set to oscollate between two colors before being replaced by loading a texture. The color of each fragment is determined by using the uv coordinates and finding the corresponding color on the texture.
 7. (Top) Created using an adjusted frag shader called tile.frag. By multiplying the uv coordinates by 2, the sampler looks twice ahead on the textue (so for example, 0.5 would instead retrieve the color for 1.0), resulting in the texture only taking up a quarter of the space. I found that the small texture could be 'moved' around the cube by subtracting a vector from the uv coordinates, so I used if statements to determine what vector should be subtracted (you can see this code commented out on tile.frag). However I eventually found that this could be done more efficiently by subtracting a vector whose x and y values were floor(vUv + 0.5). x/y will be 0.0 if vUv is less than 0.5 and 1.0 if vUv is greater than 0.5.
 
-Lab 5
+LAB 5
+
 Video: https://drive.google.com/file/d/16fcXPUOWzqHdbiObPPT6L8cwllma07R0/view?usp=sharing
 
 In addition to doing the particle system tutorial, I made various changes to transform the scene from an evening setting to a nighttime one. These changes/additions include:
@@ -44,7 +48,8 @@ In addition to doing the particle system tutorial, I made various changes to tra
 5. Created a particle system to represent fireflies and placed it around the map. The system emits particles in a sphere shape and they have a random start speed between -3 and 3. The random speed, in addition to a random velocity over time, causes the particles to appear in various locations within the circle and drift in a mostly random direction.
 6. Additionally, the alpha of the firefly particles changes over time so that they appear to blink in and out of vision.
 
-Lab 6
+LAB 6
+
 Lights:
 1. Point Light: A light in space that shines in all directions. Rotation is irrelevant.
 2. Directional light: Shines on all objects in the scene based on its rotation, similar to the sun. Position is irrelevant.
@@ -53,3 +58,5 @@ Lights:
 
 Glass Material
 - This material is based off of a decoration in my house. It uses the standard shader and transparent rendering mode to be see-through, along with an alpha value of 110. To give it a shiny appearance, its smoothness is turned up to 0.8.
+![](Images/20200507_085930.jpg)
+![](Images/glass_material.png)
