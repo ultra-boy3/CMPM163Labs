@@ -50,3 +50,6 @@ Lights:
 2. Directional light: Shines on all objects in the scene based on its rotation, similar to the sun. Position is irrelevant.
 3. Spot Light: Shines light on objects within a cone, of which the radius and other properties can be adjusted. Affected by rotation and position.
 4. Area Light: Shines light on all objects on one side of a rectangular plane. Only works with baked lighting.
+
+Glass Material
+- This material is based off of a decoration in my house. It uses the standard shader and transparent rendering mode to be see-through, along with an alpha value of 110. To give it a shiny appearance, its smoothness is turned up to 0.8.
