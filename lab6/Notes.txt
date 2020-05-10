@@ -29,3 +29,9 @@ Video 3 & 4:
 	- Specular
 - Rendering modes:
 	- Transparent, based on color alpha. Retains reflection.
+
+Video 5: Textures
+- Applied to materials, can be any supported image file
+- Supports transparent textures (except jpg)
+- Set texture type presets (texture, normal map, etc)
+- Various quality settings
