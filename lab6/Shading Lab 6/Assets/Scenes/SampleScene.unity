@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 47e89500091af034b897f7d9260d24ea, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 297702bd6959cfb4ea80a3f5e86187f1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38051525, g: 0.2739945, b: 0.4320017, a: 1}
+  m_IndirectSpecularColor: {r: 0.031846844, g: 0.065018386, b: 0.082608245, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -498,7 +498,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.4686e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.3368e-41, z: 0, w: -1.381327e-25}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -812,7 +812,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.7783019, g: 0.84285325, b: 1, a: 1}
+  m_Color: {r: 0.7216981, g: 0.968544, b: 1, a: 1}
   m_Intensity: 25
   m_Range: 35
   m_SpotAngle: 45
@@ -1350,7 +1350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!102 &2089431576
 TextMesh:
   serializedVersion: 3
