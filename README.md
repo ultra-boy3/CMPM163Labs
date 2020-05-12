@@ -50,8 +50,8 @@ In addition to doing the particle system tutorial, I made various changes to tra
 
 LAB 6
 
-![](Images/Screenshot (28).png)
-![](Images/Screenshot (29).png)
+![](Images/lab6a.png)
+![](Images/lab6b.png)
 
 Lights:
 1. Point Light: A light in space that shines in all directions. Rotation is irrelevant.
