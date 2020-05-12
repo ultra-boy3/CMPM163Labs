@@ -56,7 +56,7 @@ LAB 6
 Lights:
 1. Point Light: A light in space that shines in all directions. Rotation is irrelevant.
 2. Directional light: Shines on all objects in the scene based on its rotation, similar to the sun. Position is irrelevant.
-3. Spot Light: Shines light on objects within a cone, of which the radius and other properties can be adjusted. Affected by rotation and position.
+3. Spot Light: Shines light on objects within a cone, of which the radius and other properties can be adjusted. Affected by rotation and position. (A bit tricky to see but it's on the tree in the back)
 4. Area Light: Shines light on all objects on one side of a rectangular plane. Only works with baked lighting.
 
 Glass Material
