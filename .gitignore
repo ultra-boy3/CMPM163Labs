@@ -18,6 +18,8 @@ lab5/Karting Microgame/Library/PackageCache/com.unity.barracuda@0.5.0-preview/To
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
+*.pdb.meta
+*.mdb.meta
 
 ###
 # VS/MD solution and project files
