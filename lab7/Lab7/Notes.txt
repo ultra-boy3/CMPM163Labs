@@ -1,0 +1,11 @@
+Connecting position to Voronoi allows it to use the position for its noise
+generation.
+
+Different nodes connect and combine to create custom effects
+
+Object Space vs. World Space
+- Distortion can be based on local position or world position. World position
+	causes the distortion to change based on position in the scene view.
+
+We can also use slides to adjust the strength of effects. (In real production this
+would be done through code)
