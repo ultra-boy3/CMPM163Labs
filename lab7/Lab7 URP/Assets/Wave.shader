@@ -1,10 +1,11 @@
 ﻿Shader "Custom/Waves"{
 	Properties{
-		_Color("Colour", Color) = (1, 1, 1, 1)
+		_Color("Color", Color) = (0, 0.568627, 1, 1)
+		_Color2("Color2", Color) = (0, 0, 0, 1)
 		_Strength("Strength", Range(0, 2)) = 1.0
 		_Speed("Speed", Range(-200, 200)) = 100 //Negative makes the effect go backwards
 		
-_HeightMin("Height Min", Float) = -1
+		_HeightMin("Height Min", Float) = -1
 		_HeightMax("Height Max", Float) = 1
 		_ColorMin("Tint Color At Min", Color) = (0,0,0,1)
 		_ColorMax("Tint Color At Max", Color) = (1,1,1,1)
@@ -26,12 +27,14 @@ _HeightMin("Height Min", Float) = -1
 			#pragma fragment fragmentFunc
 
 			float4 _Color;
+			float4 _Color2;
 			float _Strength;
 			float _Speed;
 			fixed4 _ColorMin;
 			fixed4 _ColorMax;
 			float _HeightMin;
 			float _HeightMax;
+			float save_displacement;
 
 			struct vertexInput {
 				float4 vertex : POSITION;
@@ -40,6 +43,7 @@ _HeightMin("Height Min", Float) = -1
 			struct vertexOutput {
 				float4 pos : SV_POSITION;
 				float2 uv : TEXCOORD0;
+				//float4 pos2 : POSITION;
 			};
 
 			vertexOutput vertexFunc(vertexInput IN) {
@@ -47,6 +51,9 @@ _HeightMin("Height Min", Float) = -1
 
 				float4 worldPos = mul(unity_ObjectToWorld, IN.vertex);
 				float displacement = (cos(worldPos.y) + cos(worldPos.x + (_Speed * _Time)));
+
+				save_displacement = displacement;
+
 				worldPos.y = worldPos.y + (displacement * _Strength);
 
 				o.pos = mul(UNITY_MATRIX_VP, worldPos);
@@ -55,18 +62,19 @@ _HeightMin("Height Min", Float) = -1
 			}
 
 			float4 fragmentFunc(vertexOutput IN) : COLOR{
-				float add = IN.pos.y;
-				float4 offset = (1 * add, 1 * add, 0, 0);
+				float add = (cos(IN.pos.y) + cos(IN.pos.x + (_Speed * _Time)));
+				float4 offset = (1 * add, 1 * add, 0, 1);
+				//float4 worldPos = IN / UNITY_MATRIX_VP;
 
-				if (IN.pos.y > -2.2)
+				if (IN.pos.y > (IN.pos.y - (save_displacement * 0.5)))
 				{
-					offset = (2, 2, 2, 2);
+					_Color2 = (1, 1, 1, 1);
 				}
 
 				//float h = (_HeightMax - IN.worldPos.y) / (_HeightMax - _HeightMin);
 				//fixed4 tintColor = lerp(_ColorMax.rgba, _ColorMin.rgba, h)
 
-				return (_Color * offset);
+				return (_Color + +_Color2);
 			}
 
 			ENDCG

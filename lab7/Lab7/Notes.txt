@@ -9,3 +9,8 @@ Object Space vs. World Space
 
 We can also use slides to adjust the strength of effects. (In real production this
 would be done through code)
+
+Adjustments:
+- Snow on mountains based on y-position (Used split, blend, and color)
+- Snowy particle system
+- Space skybox (free asset)
