@@ -1,8 +1,13 @@
 ﻿Shader "Custom/Waves"{
 	Properties{
-		_Color("Colour", Color) = (0, 0, 0, 1)
+		_Color("Colour", Color) = (1, 1, 1, 1)
 		_Strength("Strength", Range(0, 2)) = 1.0
 		_Speed("Speed", Range(-200, 200)) = 100 //Negative makes the effect go backwards
+		
+_HeightMin("Height Min", Float) = -1
+		_HeightMax("Height Max", Float) = 1
+		_ColorMin("Tint Color At Min", Color) = (0,0,0,1)
+		_ColorMax("Tint Color At Max", Color) = (1,1,1,1)
 	}
 
 	SubShader{
@@ -23,6 +28,10 @@
 			float4 _Color;
 			float _Strength;
 			float _Speed;
+			fixed4 _ColorMin;
+			fixed4 _ColorMax;
+			float _HeightMin;
+			float _HeightMax;
 
 			struct vertexInput {
 				float4 vertex : POSITION;
@@ -30,6 +39,7 @@
 
 			struct vertexOutput {
 				float4 pos : SV_POSITION;
+				float2 uv : TEXCOORD0;
 			};
 
 			vertexOutput vertexFunc(vertexInput IN) {
@@ -40,11 +50,23 @@
 				worldPos.y = worldPos.y + (displacement * _Strength);
 
 				o.pos = mul(UNITY_MATRIX_VP, worldPos);
+				o.uv = float2(IN.vertex.x, IN.vertex.y);
 				return o;
 			}
 
 			float4 fragmentFunc(vertexOutput IN) : COLOR{
-				return _Color;
+				float add = IN.pos.y;
+				float4 offset = (1 * add, 1 * add, 0, 0);
+
+				if (IN.pos.y > -2.2)
+				{
+					offset = (2, 2, 2, 2);
+				}
+
+				//float h = (_HeightMax - IN.worldPos.y) / (_HeightMax - _HeightMin);
+				//fixed4 tintColor = lerp(_ColorMax.rgba, _ColorMin.rgba, h)
+
+				return (_Color * offset);
 			}
 
 			ENDCG
