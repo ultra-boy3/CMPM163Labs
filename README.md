@@ -86,7 +86,7 @@ and color nodes)
 
 Partner Responses (Alex Barclay):
 1. I did part 1
-2.. I found translating what I learned deforming the sphere mesh
+2. I found translating what I learned deforming the sphere mesh
 to making mountains with a plane the most difficult.  The most
 difficult part that was in a tutorial was getting the shader
 code syntax right on the wave tutorial.
