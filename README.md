@@ -74,6 +74,8 @@ I decided for fun to create two skyboxes for this lab: The first one is procedur
 
 LAB 7
 
+Video: https://drive.google.com/file/d/1Sx82aifA1RJrQxgy2lDZ3ScpJiFCGYBk/view?usp=sharing
+
 Additional Features:
 - Snow on mountains based on y-position (Used split, blend, 
 and color nodes)
