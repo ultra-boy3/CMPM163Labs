@@ -276,6 +276,8 @@ MonoBehaviour:
   - {fileID: 117616, guid: b2fcb4869e568194ebff11fc13530282, type: 3}
   mapWidth: 20
   mapHeight: 20
+  space: 4
+  noiseDepth: 10
 --- !u!4 &806664253
 Transform:
   m_ObjectHideFlags: 0
