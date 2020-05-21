@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 465925767}
   - component: {fileID: 465925766}
   - component: {fileID: 465925765}
+  - component: {fileID: 465925769}
+  - component: {fileID: 465925768}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,6 +205,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &465925768
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465925764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &465925769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465925764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d243c0e1197e7434899f2613eeaa06b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 200
+  speed: 0.1
+  rotateY: 0
+--- !u!1 &806664251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806664253}
+  - component: {fileID: 806664252}
+  m_Layer: 0
+  m_Name: CityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &806664252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806664251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9cf40a86dc8214b92b0b21046d01e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings:
+  - {fileID: 141268, guid: b3d3a7ba5f4d42943920370ae1696723, type: 3}
+  - {fileID: 147108, guid: 3d01ef65dd7df27469c08a5faaf917bd, type: 3}
+  - {fileID: 151704, guid: 43cefcf568e58d84d802bbb3c6a74777, type: 3}
+  - {fileID: 189348, guid: d597a8fa6b192c545bbae896e4d42a21, type: 3}
+  - {fileID: 117616, guid: b2fcb4869e568194ebff11fc13530282, type: 3}
+  mapWidth: 20
+  mapHeight: 20
+--- !u!4 &806664253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806664251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107231755
 GameObject:
@@ -293,7 +379,7 @@ Transform:
   m_GameObject: {fileID: 1107231755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1000, y: 1, z: 1000}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
