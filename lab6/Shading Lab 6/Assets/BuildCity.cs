@@ -27,7 +27,7 @@ public class BuildCity : MonoBehaviour
         HashSet<int> streetLocations = new HashSet<int>();
         for(int i = 0; i < streets; i++)
         {
-            int street = UnityEngine.Random.Range(0, 36) * 10; //Use noise instead?
+            int street = UnityEngine.Random.Range(0, 9) * 40; //Use noise instead?
             streetLocations.Add(street);
         }
 
@@ -61,52 +61,39 @@ public class BuildCity : MonoBehaviour
         for(int r = 5; r < mapRadius; r++)
         {
             int h = 0;
-            /*
-            for(int d = 0; d < 360; d += 5) //Every 5 degrees?
-            {
-                h++;
-                if (!streetLocations.Contains(d))
-                {
-                    int result = (int)(Mathf.PerlinNoise(r / noiseDepth + seed, h / noiseDepth + seed) * 10);
-
-                    Transform placement = gameObject.transform;
-                    placement.position = new Vector3(r * space, 0, 0);
-                    placement.RotateAround(new Vector3(0, 0, 0), transform.up, d);
-
-                    if (result < 2)
-                        Instantiate(buildings[0], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 4)
-                        Instantiate(buildings[1], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 6)
-                        Instantiate(buildings[2], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 8)
-                        Instantiate(buildings[3], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 10)
-                        Instantiate(buildings[4], placement.position, Quaternion.Euler(0, d, 0));
-                }
-            }
-            */
-
             int d = 0;
             while(d < 360)
             {
                 if (!streetLocations.Contains(d) && !streetLocations.Contains(d+5) && !streetLocations.Contains(d-5))
                 {
-                    int result = (int)(Mathf.PerlinNoise(r / noiseDepth + seed, h / noiseDepth + seed) * 10);
+                    int result = (int)(Mathf.PerlinNoise(r / noiseDepth + seed, h / noiseDepth + seed) * 100);
+                    //Noise depth determines the level of detail jumped over.
 
                     Transform placement = gameObject.transform;
                     placement.position = new Vector3(r * space, 0, 0);
                     placement.RotateAround(new Vector3(0, 0, 0), transform.up, d);
 
-                    if (result < 4)
+                    //Small1 = 35
+                    //Large1 = 5
+                    //Small2 = 20
+                    //Large2 = 5
+                    //Small3 = 15
+                    //Large1 = 10
+                    //Large2 = 10
+
+                    if (result < 34)
                         Instantiate(buildings[0], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 6)
+                    else if (result < 35) //Rare
+                        Instantiate(buildings[4], placement.position, Quaternion.Euler(0, d, 0));
+                    else if (result < 59)
                         Instantiate(buildings[1], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 8)
-                        Instantiate(buildings[2], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 9)
+                    else if (result < 60) //Rare
                         Instantiate(buildings[3], placement.position, Quaternion.Euler(0, d, 0));
-                    else if (result < 10)
+                    else if (result < 80)
+                        Instantiate(buildings[2], placement.position, Quaternion.Euler(0, d, 0));
+                    else if (result < 90)
+                        Instantiate(buildings[3], placement.position, Quaternion.Euler(0, d, 0));
+                    else if (result < 100)
                         Instantiate(buildings[4], placement.position, Quaternion.Euler(0, d, 0));
                 }
                 else if(streetLocations.Contains(d) && pipes)
