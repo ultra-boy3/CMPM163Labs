@@ -94,3 +94,9 @@ code syntax right on the wave tutorial.
 waves to go along two axes of the plane.
 
 Alex and I did not help eachother on this lab.
+
+LAB 8
+
+WHERE TO FIND IT: Lab 8 is located in Lab6/Shading Lab 6/Assets/Scenes/ProceduralCity.unity. The assets used are located in the same asset folder.
+
+
