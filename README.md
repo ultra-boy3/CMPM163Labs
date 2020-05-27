@@ -107,4 +107,4 @@ For this lab I decided to base my generated city off of Corescant, the massive p
 
 Partner: Jackie Wong
 
-My partner Jackie did the THREE.js version of this lab, and for the creative portion he enhanced his city by adding a surrounding ocean and hills. Like the city, the hills were also created with noise to give them varying height, which I liked because it made his city feel like an actual place.
+My partner Jackie did the THREE.js version of this lab, and for the creative portion he enhanced his city by adding a surrounding ocean and hills. Like the city, the hills were also created with noise to give them varying height, which I liked because it made his city feel like an actual place. We did not help each other on this lab.
