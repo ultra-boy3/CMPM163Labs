@@ -104,3 +104,7 @@ WHERE TO FIND IT: Lab 8 is located in Lab6/Shading Lab 6/Assets/Scenes/Procedura
 ![](Images/Corescant.png)
 
 For this lab I decided to base my generated city off of Corescant, the massive planet-wide city from the Star Wars series, mainly using the reference picture above. To achive this, I started by makeing the code place buildings in a circular arragnement, using a loop that increments in degrees up to 360. Each building is placed at a "radius" distance from the center and then rotated around it by x degreees. A building is placed every 10 degrees in the inner circle and every 5 degrees in the outer circle, so that the outer circle is more densely populated and the inner cirlce buildings are not too close to eachother. Additionally, "streets" can be randomly chosen every 40 degrees (so they are not too close to eachother) where no buildings will be placed.
+
+Partner: Jackie Wong
+
+My partner Jackie did the THREE.js version of this lab, and for the creative portion he enhanced his city by adding a surrounding ocean and hills. Like the city, the hills were also created with noise to give them varying height, which I liked because it made his city feel like an actual place.
